@@ -1,0 +1,60 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0" version="24.0.0">
+  <diagram id="activity-uml" name="UML Activity - Оплата заказа">
+    <mxGraphModel dx="1000" dy="700" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="start" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#000000;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="140" y="40" width="30" height="30" as="geometry" />
+        </mxCell>
+
+        <mxCell id="a1" value="Рассчитать стоимость заказа" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="55" y="110" width="200" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="a2" value="Отправить запрос в платёжный шлюз" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="55" y="200" width="200" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="d1" value="Оплата прошла?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="115" y="290" width="80" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="a3" value="Показать сообщение об ошибке" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="290" y="295" width="200" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="a4" value="Подтвердить заказ и уведомить ресторан" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="30" y="400" width="250" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="end" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=3;" vertex="1" parent="1">
+          <mxGeometry x="140" y="490" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="endInner" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#000000;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="147" y="497" width="16" height="16" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=classic;rounded=0;" edge="1" parent="1" source="start" target="a1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=classic;rounded=0;" edge="1" parent="1" source="a1" target="a2"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e3" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=classic;rounded=0;" edge="1" parent="1" source="a2" target="d1"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e4" value="нет" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=classic;rounded=0;" edge="1" parent="1" source="d1" target="a3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" value="да" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=classic;rounded=0;" edge="1" parent="1" source="d1" target="a4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e6" value="повторить попытку" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=classic;rounded=0;exitX=0.5;exitY=0;entryX=1;entryY=0.5;" edge="1" parent="1" source="a3" target="a2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="390" y="225" /></Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="e7" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=classic;rounded=0;" edge="1" parent="1" source="a4" target="end"><mxGeometry relative="1" as="geometry" /></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
